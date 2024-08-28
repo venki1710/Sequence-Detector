@@ -1,0 +1,30 @@
+module test_bench();
+reg x,clk,rst;
+wire y;
+behaviouralsq dut( y, clk,rst,x);
+always #5 clk = ~clk;
+initial
+begin
+#0 clk=0;rst=1'b1;x=0;
+#8 rst = 0;x=1;
+#10 x = 1;
+#10 x = 0;
+#10 x = 1;
+#10 x = 1;
+#10 x = 0;
+#10 x = 0;
+#10 x = 1;
+#10 x = 1;
+#10 x = 0;
+#10 x = 1;
+#10 x = 1;
+#10 x = 0;
+#10 x = 1;
+#10 x = 1;
+#10 x = 0;
+#10 x = 1;
+#10 x = 1;
+#10 x = 0;
+#20 $finish;
+end
+endmodule
